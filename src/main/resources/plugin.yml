@@ -1,0 +1,4 @@
+name: BreachCore
+version: 1.0
+main: net.breachmc.breachcore.Main
+authors: [Experminator, ProtocollWeb]
