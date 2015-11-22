@@ -14,7 +14,7 @@ public class ReloadCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.hasPermission("breach.reload")) {
-            Main.reload((args.length == 1 && args[0].equalsIgnoreCase("plugin")));
+            Main.reload((args.length == 1 && (args[0].equalsIgnoreCase("plugin") || args[0].equalsIgnoreCase("-p")));
             MessageManager.getMessage("reload-complete").send(sender);
             return true;
         }
