@@ -1,5 +1,6 @@
 package net.breachmc.breachcore;
 
+import net.breachmc.breachcore.configuration.ConfigurationManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -21,5 +22,13 @@ public class Main extends JavaPlugin {
 
     public static JavaPlugin getPlugin() {
         return plugin;
+    }
+
+    public static ConfigurationManager getConfiguration() {
+        return new ConfigurationManager("config", ConfigurationManager.FileType.YAML);
+    }
+
+    public static ConfigurationManager getMessages() {
+        return new ConfigurationManager("messages", ConfigurationManager.FileType.YAML);
     }
 }
