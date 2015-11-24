@@ -22,14 +22,14 @@ public class ReloadCommand implements SubCommand {
         if (args.length == 1) {
             if (args[0].equalsIgnoreCase("plugin")) {
                 PluginUtil.reload(PluginUtil.ReloadType.PLUGIN);
-                MessageUtil.send(sender, Main.getPrefix() + "&aPlugin is successfully reloaded.");
+                MessageUtil.send(sender, true, "&aPlugin is successfully reloaded.");
             } else if (args[0].equalsIgnoreCase("config")) {
                 PluginUtil.reload(PluginUtil.ReloadType.CONFIG);
-                MessageUtil.send(sender, Main.getPrefix() + "&aConfiguration is successfully reloaded.");
+                MessageUtil.send(sender, true, "&aConfiguration is successfully reloaded.");
             }
         } else {
             PluginUtil.reload(PluginUtil.ReloadType.ALL);
-            MessageUtil.send(sender, Main.getPrefix() + "&aPlugin & Configuration is successfully reloaded.");
+            MessageUtil.send(sender, true, "&aPlugin & Configuration is successfully reloaded.");
         }
     }
 }
