@@ -22,7 +22,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
                         CommandData data = getCommandData(sc);
 
                         if (sender.hasPermission(data.permission())) {
-                            MessageUtil.send(sender, "&6{name} ({aliases})&7: {description}"
+                            MessageUtil.send(sender, false, "&6{name} ({aliases})&7: {description}"
                                             .replace("{name}", data.name())
                                             .replace("{aliases}", String.join("|", data.aliases()))
                                             .replace("{description}", data.description())
@@ -37,24 +37,24 @@ public class CommandManager implements CommandExecutor, TabCompleter {
             SubCommand target = getCommand(args[0]);
 
             if (target == null) {
-                MessageUtil.send(sender, "&cCommand '{name}' does not exists.".replace("{name}", args[0]));
+                MessageUtil.send(sender, true, "&cCommand '{name}' does not exists.".replace("{name}", args[0]));
                 return true;
             }
 
             if (!hasCommandData(target)) {
-                MessageUtil.send(sender, "&cCommand '{name}' is not correctly configured.".replace("{name}", args[0]));
+                MessageUtil.send(sender, true, "&cCommand '{name}' is not correctly configured.".replace("{name}", args[0]));
                 return true;
             }
 
             CommandData data = getCommandData(target);
 
             if (data.isOnlyPlayer() && !(sender instanceof Player)) {
-                MessageUtil.send(sender, "&cCommand '{name}' can only be used by players.".replace("{name}", data.name()));
+                MessageUtil.send(sender, true, "&cCommand '{name}' can only be used by players.".replace("{name}", data.name()));
                 return true;
             }
 
             if (!sender.hasPermission(data.permission()) || !sender.isOp()) {
-                MessageUtil.send(sender, "&cYou don't have permission to use the command '{name}'.".replace("{name}", data.name()));
+                MessageUtil.send(sender, true, "&cYou don't have permission to use the command '{name}'.".replace("{name}", data.name()));
                 return true;
             }
 
