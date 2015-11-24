@@ -16,8 +16,8 @@ public class MessageUtil {
         return ChatColor.translateAlternateColorCodes('&', message);
     }
 
-    public static void send(CommandSender sender, String message) {
-        sender.sendMessage(color(message));
+    public static void send(CommandSender sender, boolean prefix, String message) {
+        sender.sendMessage((prefix ? Main.getPrefix() : null) color(message));
     }
 
     public static void broadcast(String message) {
