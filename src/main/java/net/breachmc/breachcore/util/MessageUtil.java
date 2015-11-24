@@ -16,8 +16,15 @@ public class MessageUtil {
         return ChatColor.translateAlternateColorCodes('&', message);
     }
 
-    public static void send(CommandSender sender, boolean prefix, String message) {
-        sender.sendMessage((prefix ? Main.getPrefix() : null) color(message));
+    /**
+    * Send a message.
+    *
+    * @param target Console/Player to send a message to.
+    * @param prefix With prefix or not.
+    * @param message The message to send.
+    */
+    public static void send(CommandSender target, boolean prefix, String message) {
+        target.sendMessage((prefix ? Main.getPrefix() : null) color(message));
     }
 
     public static void broadcast(String message) {
