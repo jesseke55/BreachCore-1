@@ -21,6 +21,7 @@ public class BroadcastCommand implements SubCommand {
     public void execute(CommandSender sender, String[] args) {
         if (args.length == 0) {
             MessageUtil.send(sender, "&cYou need to specify a message.");
+            return;
         } else {
             String msg = "";
 
