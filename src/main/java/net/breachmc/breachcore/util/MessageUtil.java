@@ -24,7 +24,7 @@ public class MessageUtil {
     * @param message The message to send.
     */
     public static void send(CommandSender target, boolean prefix, String message) {
-        target.sendMessage((prefix ? Main.getPrefix() : null) color(message));
+        target.sendMessage((prefix ? Main.getPrefix() : "") + color(message));
     }
 
     public static void broadcast(String message) {
