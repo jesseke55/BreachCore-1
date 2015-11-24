@@ -54,7 +54,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
             }
 
             if (!sender.hasPermission(data.permission()) || !sender.isOp()) {
-                MessageUtil.send(sender, "&cYou don't have permission to the command '{name}'.".replace("{name}", data.name()));
+                MessageUtil.send(sender, "&cYou don't have permission to use the command '{name}'.".replace("{name}", data.name()));
                 return true;
             }
 
