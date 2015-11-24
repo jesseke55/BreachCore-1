@@ -10,8 +10,8 @@ import org.bukkit.command.CommandSender;
  */
 @CommandData(
         name = "Reload",
-        description = "Reload the plugin",
-        aliases = {"rl", "load"},
+        description = "Reload the plugin/configuration",
+        aliases = { "rl", "load" },
         permission = "breachcore.reload",
         isOnlyPlayer = false
 )
